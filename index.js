@@ -91,8 +91,8 @@ var getPlatformIcons = function() {
             { name:'Square71x71Logo.scale-240.png', size:170 },
             { name:'StoreLogo.scale-100.png', size:50 },
             { name:'StoreLogo.scale-240.png', size:120 },
-            { name:'Wide310x150Logo.scale-100.png', size:310 },
-            { name:'Wide310x150Logo.scale-240.png', size:744 },
+            { name:'Wide310x150Logo.scale-100.png', width:310, height:150 },
+            { name:'Wide310x150Logo.scale-240.png', width:744, height:360 }
         ]
     });
 
@@ -242,21 +242,39 @@ var generateIcon = function(platform, icon) {
         if (!fs.existsSync(filedirName)) {
             nodeFs.mkdirSync(filedirName, '0777', true);
         }
-        ig.resize({
-            srcPath: settings.ICON_FILE,
-            dstPath: filePath,
-            quality: 1,
-            format: icon.name.replace(/.*\.(\w+)$/i, '$1').toLowerCase(),
-            width: icon.size,
-            height: icon.size,
-        }, function(err, stdout, stderr) {
-            if (err) {
-                deferred.reject(err);
-            } else {
-                deferred.resolve();
-                display.success(icon.name + ' created');
-            }
-        });
+        if (icon.size) {
+            ig.resize({
+                srcPath: settings.ICON_FILE,
+                dstPath: filePath,
+                quality: 1,
+                format: icon.name.replace(/.*\.(\w+)$/i, '$1').toLowerCase(),
+                width: icon.size,
+                height: icon.size
+            }, function(err, stdout, stderr) {
+                if (err) {
+                    deferred.reject(err);
+                } else {
+                    deferred.resolve();
+                    display.success(icon.name + ' created');
+                }
+            });
+        } else {
+            ig.crop({
+                srcPath: settings.ICON_FILE,
+                dstPath: filePath,
+                quality: 1,
+                format: icon.name.replace(/.*\.(\w+)$/i, '$1').toLowerCase(),
+                width: icon.width,
+                height: icon.height
+            }, function(err, stdout, stderr) {
+                if (err) {
+                    deferred.reject(err);
+                } else {
+                    deferred.resolve();
+                    display.success(icon.name + ' created');
+                }
+            });
+        }
     } catch (error) {
         deferred.reject(err);
     }
