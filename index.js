@@ -148,6 +148,8 @@ var getPlatformSplashs = function() {
             { name:"screen-iphone-portrait-667h.png", width:750, height:1334 },     // iPhone 6
             { name:"screen-iphone-portrait-736h.png", width:1242, height:2208 },    // iPhone 6 Plus
             { name:"screen-iphone-landscape-736h.png", width:2208, height:1242 },   // iPhone 6 Plus
+            { name:"screen-iphone-landscape-2436.png", width:1125, height:2436 },   // iPhone X
+            { name:"screen-iphone-portrait-2436.png", width:2436, height:1125 }   // iPhone X
         ]
     });
 

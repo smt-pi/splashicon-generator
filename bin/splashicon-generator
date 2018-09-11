@@ -5,7 +5,7 @@ var generator = require(path.resolve(__dirname,'../index'));
 var argv = require('yargs').argv;
 
 var baseImagesPath = argv.imagespath || argv.ip || 'model';
-console.log("Generating image set (2018-09)...");
+console.log("Generating image set (2018-09-11)...");
 
 generator.generate({
 	ICON_FILE: path.join(baseImagesPath, 'icon.png'),
