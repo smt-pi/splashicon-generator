@@ -35,6 +35,8 @@ var getPlatformIcons = function() {
             // iOS 6.1, Spotlight Icon -->
             { name:'icon-40.png', size:40 },
             { name:'icon-40-2x.png', size:80 },
+
+            { name:'icon-48.png', size:48 },
             // iPhone / iPod Touch -->
             { name:'icon-57.png', size:57 },
             { name:'icon-57-2x.png', size:114 },
@@ -43,10 +45,16 @@ var getPlatformIcons = function() {
             { name:'icon-72-2x.png', size:144 },
             // iPhone Spotlight and Settings Icon -->
             { name:'icon-small.png', size:29 },
+            { name:'icon-small-1.png', size:20 },
             { name:'icon-small-2x.png', size:58 },
             // iPad Spotlight and Settings Icon -->
             { name:'icon-50.png', size:50 },
-            { name:'icon-50-2x.png', size:100 }
+            { name:'icon-50-2x.png', size:100 },
+
+            { name:'icon-27.5-2x.png', size:55 },
+            { name:'icon-44-2x.png', size:88 },
+            { name:'icon-86-2x.png', size:172 },
+            { name:'icon-98-2x.png', size:196 }
         ]
     });
 
