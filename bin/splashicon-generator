@@ -5,9 +5,9 @@ var generator = require(path.resolve(__dirname,'../index'));
 var argv = require('yargs').argv;
 
 var baseImagesPath = argv.imagespath || argv.ip || 'model';
-console.log("Generating image set (2018-09-11)...");
+console.log("Generating image set (2019-05-15)...");
 
 generator.generate({
-	ICON_FILE: path.join(baseImagesPath, 'icon.png'),
-	SPLASH_FILE: path.join(baseImagesPath, 'splash.png')
+	ICON_FILE: path.join(baseImagesPath, 'genius-hub-icon.png'),
+	SPLASH_FILE: path.join(baseImagesPath, 'genius-hub-splash.png')
 }); 

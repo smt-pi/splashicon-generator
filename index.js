@@ -54,7 +54,10 @@ var getPlatformIcons = function() {
             { name:'icon-27.5-2x.png', size:55 },
             { name:'icon-44-2x.png', size:88 },
             { name:'icon-86-2x.png', size:172 },
-            { name:'icon-98-2x.png', size:196 }
+            { name:'icon-98-2x.png', size:196 },
+            { name:'icon-20.png', size:20 },
+            { name:'icon-24-2x.png', size:48 },
+            { name:'icon-1024.png', size:1024 },
         ]
     });
 
@@ -216,8 +219,8 @@ var getPlatformSplashs = function() {
  * TODO: add option to get these values as CLI params
  */
 var settings = {};
-settings.ICON_FILE = path.join('model', 'icon.png');
-settings.SPLASH_FILE = path.join('model', 'splash.png');
+settings.ICON_FILE = path.join('model', 'genius-hub-icon.png');
+settings.SPLASH_FILE = path.join('model', 'genius-hub-splash.png');
 
 /**
  * @var {Object} console utils
